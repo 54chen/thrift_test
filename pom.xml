@@ -9,7 +9,26 @@
 	<name>thrift_test</name>
 
 	<dependencies>
-
+        <dependency>
+            <groupId>org.apache.thrift</groupId>
+            <artifactId>libthrift</artifactId>
+            <version>0.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.5</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.14</version>
+        </dependency>
 	</dependencies>
 
 
@@ -33,9 +52,10 @@
             <plugin>
                 <groupId>org.apache.thrift.tools</groupId>
                 <artifactId>maven-thrift-plugin</artifactId>
-                <version>0.1.11</version>
+                <version>0.1.10</version>
                 <configuration>
-                    <thriftExecutable>/usr/local/bin/thrift</thriftExecutable>
+                    <thriftExecutable>/usr/local/bin/thrift</thriftExecutable>      <!--0.5.0-->
+                    <!--thriftExecutable>/Users/chenzhen/Downloads/thrift-0.9.1/bin/thrift</thriftExecutable-->      <!--0.5.0-->
                     <generator>java</generator>
                 </configuration>
                 <executions>
@@ -48,7 +68,19 @@
                     </execution>
                 </executions>
             </plugin>
-
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>appassembler-maven-plugin</artifactId>
+                <version>1.1.1</version>
+                <configuration>
+                    <programs>
+                        <program>
+                            <mainClass>com.xiaomi.miliao.thrift.service.ThriftOldServer</mainClass>
+                            <name>start.sh</name>
+                        </program>
+                    </programs>
+                </configuration>
+            </plugin>
 
 		</plugins>
 	</build>
