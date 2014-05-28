@@ -16,12 +16,12 @@ import org.apache.thrift.transport.TServerSocket;
  */
 public class ThriftOldServer implements Hello.Iface{
     public static void main(String[] args) throws Exception {
-        TServerSocket serverTransport = new TServerSocket(7777);
-        Hello.Processor processor = new Hello.Processor(new ThriftOldServer());
-        TBinaryProtocol.Factory protFactory = new TBinaryProtocol.Factory(true, true);
-        TServer server = new TThreadPoolServer(processor, serverTransport, protFactory);
-        System.out.println("Starting server on port 7777 ...");
-        server.serve();
+//        TServerSocket serverTransport = new TServerSocket(7777);
+//        Hello.Processor processor = new Hello.Processor(new ThriftOldServer());
+//        TBinaryProtocol.Factory protFactory = new TBinaryProtocol.Factory(true, true);
+//        TServer server = new TThreadPoolServer(processor, serverTransport, protFactory);
+//        System.out.println("Starting server on port 7777 ...");
+//        server.serve();
      }
 
     @Override

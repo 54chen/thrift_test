@@ -12,7 +12,7 @@
         <dependency>
             <groupId>org.apache.thrift</groupId>
             <artifactId>libthrift</artifactId>
-            <version>0.5.0</version>
+            <version>0.9.1</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -54,8 +54,8 @@
                 <artifactId>maven-thrift-plugin</artifactId>
                 <version>0.1.10</version>
                 <configuration>
-                    <thriftExecutable>/usr/local/bin/thrift</thriftExecutable>      <!--0.5.0-->
-                    <!--thriftExecutable>/Users/chenzhen/Downloads/thrift-0.9.1/bin/thrift</thriftExecutable-->      <!--0.5.0-->
+                    <!--thriftExecutable>/usr/local/bin/thrift</thriftExecutable-->      <!--0.5.0-->
+                    <thriftExecutable>/Users/chenzhen/Downloads/thrift-0.9.1/bin/thrift</thriftExecutable>      <!--0.5.0-->
                     <generator>java</generator>
                 </configuration>
                 <executions>
@@ -75,7 +75,7 @@
                 <configuration>
                     <programs>
                         <program>
-                            <mainClass>com.xiaomi.miliao.thrift.service.ThriftOldServer</mainClass>
+                            <mainClass>com.xiaomi.miliao.thrift.client.ThriftOldClient</mainClass>
                             <name>start.sh</name>
                         </program>
                     </programs>
